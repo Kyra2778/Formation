@@ -9,7 +9,7 @@ Installation
 
 Clone the project
 ```sh
-$ git clone https://github.com/Kyra/Formation.git
+$ git clone https://github.com/Kyra2778/Formation.git
 ```
 
 Then go inside the cloned folder and use Composer to install all the application dependencies

@@ -17,15 +17,16 @@ class BlogController extends Controller
 
 	public function voirAction($id)
 	{
-		$request = $this->getRequest();
-		$tag = $request->query->get('tag');
-		
-		return new Response("Affichage de l'article d'id : " .$id. " dont le tag est " .$tag);
+		return $this->render('SdzBlogBundle:Blog:voir.html.twig', array(
+			'id' => $id
+		));
 	}
 
 	public function ajouterAction()
 	{
-		return $this->render('SdzBlogBundle:Blog:ajouter.html.twig', array('nom' => 'Kyra'));
+		return $this->render('SdzBlogBundle:Blog:ajouter.html.twig', array(
+			'nom' => 'Kyra'
+		));
 	}
 
 	public function modifierAction($id)
@@ -36,5 +37,18 @@ class BlogController extends Controller
 	public function supprimerAction($id)
 	{
 		return $this->render('SdzBlogBundle:Blog:supprimer.html.twig', array('nom' => 'Kyra'));
+	}
+
+	public function menuAction()
+	{
+		$liste = array(
+			array('id' => 2, 'titre' => 'Mon dernier weekend !'),
+			array('id' => 5, 'titre' => 'Sortie de Symfony2.1'),
+			array('id' => 9, 'titre' => 'Petit test')
+		);
+
+		return $this->render('SdzBlogBundle:Blog:menu.html.twig', array(
+			'liste_articles' => $liste,
+		));
 	}
 }

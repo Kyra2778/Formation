@@ -28,6 +28,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        webmaster: %app_webmaster%
 
 # Assetic Configuration
 assetic:
@@ -62,8 +64,16 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+#    transport:  "%mailer_transport%"
+#    username:   "%mailer_user%"
+#    password:   "%mailer_password%"
+#    spool:      { type: memory }
+#    host:       "%mailer_host%"
+    #port:       "%mailer_port%"
+    #encryption: "%mailer_encryption%"
+    transport: gmail
+    #encryption: ssl
+    #auth_mode: login
+    #host:      smtp.gmail.com
+    username:  ndes.formation
+    password:  samourai2778

@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Bienvenue sur ma premi�re page</title>
-	</head>
-	<body>
-		<h1>Hello {{ nom }} !</h1>
-		
-		<p>
-			Le Hello World est un grand classique en programmation.
-			Il signifie énormément, car cela veut dire que vous avez réussi à exécuter le programme pour accomplir une tâche simple : afficher ce hello world !
-		</p>
-	</body>
-</html>
+{# src/Sdz/BlogBundle/Resources/views/Blog/ajouter.html.twig #}
+
+{% extends "SdzBlogBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Add{% endblock %}
+{% block sdzblog_body %}
+	<h2>Ajouter un article</h2>
+	{% include "SdzBlogBundle:Blog:formulaire.html.twig" %}
+	<p>Attention : cet article sera ajouté directement sur la page d'accueil après validation du formulaire.</p>
+{% endblock %}
